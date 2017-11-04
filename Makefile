@@ -3,3 +3,6 @@ LIBS=-lSDL2 -lX11
 
 all:
 	$(CC) $(CFLAGS) *.c $(LIBS) -o oot3dgc
+
+install:
+	install oot3dgc /usr/bin

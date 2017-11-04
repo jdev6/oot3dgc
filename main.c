@@ -30,6 +30,17 @@ void click (Display *display, int button) {
   XFlush (display);
 }
 
+void coords (Display *display, int *x, int *y) {
+  XEvent event;
+  XQueryPointer (display, DefaultRootWindow (display),
+                 &event.xbutton.root, &event.xbutton.window,
+                 &event.xbutton.x_root, &event.xbutton.y_root,
+                 &event.xbutton.x, &event.xbutton.y,
+                 &event.xbutton.state);
+  *x = event.xbutton.x;
+  *y = event.xbutton.y;
+}
+
 void unclick (Display *display, int button) {
   // Create and setting up the event
   XEvent event;
