@@ -136,6 +136,7 @@ int main(int argc, char** argv) {
 			SDL_JoystickUpdate();
 
 			#define C_UP_MIN 5000
+			SDL_Delay(1.0/60.0);
 
 			int cstickvert = SDL_JoystickGetAxis(joy,2);
 			if (!c_up && cstickvert < -C_UP_MIN) {
